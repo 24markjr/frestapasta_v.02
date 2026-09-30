@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef } from "react";
 import { site } from "@/data/site";
 import { Chef } from "@/components/ui/Chef";
+import { SocialIcons } from "@/components/ui/SocialIcons";
 import { BookButton } from "@/components/ui/BookButton";
 
 const STRIPS = 6;
@@ -96,11 +97,10 @@ export function MobileMenu({ id, open, onClose, pathname }: Props) {
             </motion.div>
 
             <motion.div variants={itemVariants} className="mt-auto flex items-end justify-between gap-4">
-              <p className="label text-crema/70">
-                Follow us on
-                <br />
-                <span className="text-accent">{site.social.map((s) => s.label).join(" | ")}</span>
-              </p>
+              <div>
+                <p className="label text-crema/70">Follow us</p>
+                <SocialIcons size="size-7" className="-ml-1 mt-3 gap-5" />
+              </div>
               <Chef sizes="120px" className="w-28 shrink-0" />
             </motion.div>
           </motion.nav>

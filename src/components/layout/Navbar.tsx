@@ -10,6 +10,7 @@ import { Logo } from "@/components/ui/Logo";
 import { PastaRibbon } from "@/components/ui/PastaRibbon";
 import { BookButton } from "@/components/ui/BookButton";
 import { MenuToggle } from "./MenuToggle";
+import { SocialIcons } from "@/components/ui/SocialIcons";
 import { MobileMenu } from "./MobileMenu";
 
 const MENU_ID = "mobile-menu";
@@ -68,8 +69,9 @@ export function Navbar() {
             <nav aria-label="Secondary" className="hidden lg:block">
               <NavList items={right} pathname={pathname} />
             </nav>
-            <div className="hidden lg:block">
+            <div className="hidden items-center gap-6 lg:flex xl:gap-8">
               <BookButton className="nav-label" />
+              <SocialIcons />
             </div>
             <div className="lg:hidden">
               <MenuToggle open={open} onClick={() => setOpen((o) => !o)} controls={MENU_ID} />

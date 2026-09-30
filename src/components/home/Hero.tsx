@@ -130,7 +130,7 @@ export function Hero() {
         </div>
 
         {/* Plate scene */}
-        <div className="relative mx-auto aspect-square w-[min(78vw,30rem)] lg:col-span-5 lg:w-full lg:max-w-[33rem]">
+        <div className="relative mx-auto aspect-square w-[min(78vw,30rem)] lg:col-span-5 lg:mt-20 lg:w-full lg:max-w-[31rem]">
           <motion.div
             className="absolute inset-0"
             // Visible from first paint (largest element — good LCP); it only turns and settles in.

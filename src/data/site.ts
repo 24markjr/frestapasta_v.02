@@ -38,12 +38,11 @@ export const site = {
   /** Same hours in schema.org format, for Google. */
   hoursSchema: ["Tu-Su 17:30-23:00"],
 
-  // Order matches the printed menu card: Instagram | Facebook | LinkedIn.
+  // Instagram | Facebook (LinkedIn removed at the owner's request).
   // Paste the full profile URL (e.g. "https://www.instagram.com/<handle>/") to switch the icons on.
   social: [
     { label: "Instagram", url: "https://www.instagram.com/fresta.pasta/" as string | null },
     { label: "Facebook", url: null as string | null },
-    { label: "LinkedIn", url: null as string | null },
   ],
 };
 

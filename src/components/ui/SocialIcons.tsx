@@ -24,12 +24,12 @@ const glyphs: Record<Network, React.ReactNode> = {
  * is set in src/data/site.ts; until then it shows dimmed and isn't clickable,
  * so we never point visitors at a guessed account.
  */
-export function SocialIcons({ className, size = "size-5" }: { className?: string; size?: string }) {
+export function SocialIcons({ className, size = "size-[1.15rem]" }: { className?: string; size?: string }) {
   const networks = site.social.filter((s): s is (typeof site.social)[number] & { label: Network } =>
     s.label === "Instagram" || s.label === "Facebook",
   );
   return (
-    <ul className={clsx("flex items-center gap-4", className)}>
+    <ul className={clsx("flex items-center gap-2.5", className)}>
       {networks.map((s) => {
         const icon = (
           <svg viewBox="0 0 24 24" aria-hidden className={size}>
@@ -44,12 +44,16 @@ export function SocialIcons({ className, size = "size-5" }: { className?: string
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${site.name} on ${s.label} (opens in a new tab)`}
-                className="grid place-items-center rounded-full p-1 transition-[color,transform] duration-300 hover:-translate-y-0.5 hover:text-accent"
+                // Outlined disc so the icon reads over anything behind the transparent navbar
+                className="grid size-10 place-items-center rounded-full border border-crema/45 bg-verde/70 text-crema backdrop-blur-sm transition-[background-color,color,transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-crema hover:bg-crema hover:text-verde"
               >
                 {icon}
               </a>
             ) : (
-              <span title={`${s.label} link coming soon`} className="grid place-items-center p-1 opacity-40">
+              <span
+                title={`${s.label} link coming soon`}
+                className="grid size-10 place-items-center rounded-full border border-crema/25 bg-verde/70 text-crema/55 backdrop-blur-sm"
+              >
                 {icon}
                 <span className="sr-only">{s.label} link coming soon</span>
               </span>

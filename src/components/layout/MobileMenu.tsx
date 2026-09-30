@@ -99,7 +99,7 @@ export function MobileMenu({ id, open, onClose, pathname }: Props) {
             <motion.div variants={itemVariants} className="mt-auto flex items-end justify-between gap-4">
               <div>
                 <p className="label text-crema/70">Follow us</p>
-                <SocialIcons size="size-7" className="-ml-1 mt-3 gap-5" />
+                <SocialIcons size="size-5" className="mt-3 gap-3 [&_a,&_li>span]:size-12" />
               </div>
               <Chef sizes="120px" className="w-28 shrink-0" />
             </motion.div>

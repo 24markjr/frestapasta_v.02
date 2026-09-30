@@ -1,4 +1,5 @@
 import { Chef } from "@/components/ui/Chef";
+import { FrestaWordmark } from "@/components/brand/FrestaWordmark";
 import { LineReveal } from "@/components/motion/LineReveal";
 import { Reveal } from "@/components/motion/Reveal";
 import { BookButton } from "@/components/ui/BookButton";
@@ -18,7 +19,7 @@ export function ChefBand({ lines = ["Handmade", "daily."], children, tone = "gre
             <Chef sizes="(min-width: 48rem) 380px, 260px" className="w-64 md:w-96" />
           </Reveal>
           <div className="order-1 md:order-2">
-            <p className="script mb-2 text-5xl text-arancio lg:text-6xl">Fresta</p>
+            <FrestaWordmark className="mb-4 block h-auto w-36 lg:w-44" />
             <LineReveal lines={lines} className="display-lg text-[clamp(2.25rem,5.2vw,4.5rem)]" />
             <Reveal delay={0.2} className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               {children ?? <BookButton variant="solid" />}

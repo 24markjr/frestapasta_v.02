@@ -9,6 +9,7 @@ import { BookButton } from "@/components/ui/BookButton";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { PastaRibbon } from "@/components/ui/PastaRibbon";
 import { DishMarquee } from "./DishMarquee";
+import { FrestaWordmark } from "@/components/brand/FrestaWordmark";
 import { Basil, Chili, Farfalle, Fusilli, Garlic, Parmesan, Penne, Tomato, Wheat } from "./Doodles";
 
 const soft = [0.22, 1, 0.36, 1] as const;
@@ -82,13 +83,13 @@ export function Hero() {
             <PastaRibbon waves={4} className="h-1.5 w-8 text-arancio lg:hidden" />
           </motion.p>
 
-          <h1 className="relative mt-[clamp(2.75rem,8vw,5rem)]">
+          <h1 className="relative mt-[clamp(3.5rem,11vw,6rem)] text-[clamp(4.25rem,19vw,11rem)] leading-none lg:mt-[0.95em] lg:text-[clamp(5rem,12vw,11.5rem)]">
             <span className="sr-only">
               {site.name} Pasta — {site.tagline}
             </span>
             <span aria-hidden className="block overflow-hidden pb-[0.04em]">
               <motion.span
-                className="display-xl block text-[clamp(4.25rem,19vw,11rem)] text-arancio lg:text-[clamp(5rem,12vw,11.5rem)]"
+                className="display-xl block text-[1em] text-arancio"
                 initial={{ y: "105%" }}
                 animate={{ y: "0%" }}
                 transition={{ duration: 1.1, delay: 0.35, ease: soft }}
@@ -96,14 +97,15 @@ export function Hero() {
                 Pasta
               </motion.span>
             </span>
+            {/* The restaurant's own "Fresta" lettering, traced from the menu card */}
             <motion.span
               aria-hidden
-              className="script absolute -top-[0.42em] left-1/2 -translate-x-1/2 text-[clamp(3.4rem,14vw,8.5rem)] text-crema drop-shadow-[0_8px_24px_rgba(15,36,20,0.6)] lg:-top-[0.5em] lg:left-[-0.04em] lg:translate-x-0 lg:text-[clamp(4.25rem,9.5vw,9.5rem)]"
+              className="absolute -top-[0.66em] left-1/2 block w-[1.9em] -translate-x-1/2 text-crema drop-shadow-[0_8px_24px_rgba(15,36,20,0.6)] lg:-top-[0.72em] lg:left-[-0.06em] lg:translate-x-0"
               initial={{ opacity: 0, y: -14, rotate: -5 }}
               animate={{ opacity: 1, y: 0, rotate: 0 }}
               transition={{ duration: 1, delay: 0.75, ease: soft }}
             >
-              {site.name}
+              <FrestaWordmark className="block h-auto w-full" />
             </motion.span>
           </h1>
 

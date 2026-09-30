@@ -32,8 +32,8 @@ export const site = {
   },
 
   hours: [
-    { days: "Monday", time: "Closed" },
     { days: "Tue – Sun", time: "5:30 pm – 11:00 pm" },
+    { days: "Monday", time: "Closed" },
   ] as Hours[] | null,
   /** Same hours in schema.org format, for Google. */
   hoursSchema: ["Tu-Su 17:30-23:00"],
@@ -41,7 +41,7 @@ export const site = {
   // Order matches the printed menu card: Instagram | Facebook | LinkedIn.
   // Paste the full profile URL (e.g. "https://www.instagram.com/<handle>/") to switch the icons on.
   social: [
-    { label: "Instagram", url: null as string | null },
+    { label: "Instagram", url: "https://www.instagram.com/fresta.pasta/" as string | null },
     { label: "Facebook", url: null as string | null },
     { label: "LinkedIn", url: null as string | null },
   ],

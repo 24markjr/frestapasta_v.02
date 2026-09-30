@@ -57,13 +57,14 @@ export function Navbar() {
         transition={{ duration: 0.45, ease: [0.65, 0, 0.35, 1] }}
       >
         <div className="shell grid h-full grid-cols-[auto_1fr_auto] items-center lg:grid-cols-[1fr_auto_1fr]">
-          <nav aria-label="Primary" className="hidden lg:block">
+          {/* Laptop: links sit right up against the logo on either side */}
+          <nav aria-label="Primary" className="hidden lg:block lg:justify-self-end lg:pr-10 xl:pr-14">
             <NavList items={left} pathname={pathname} />
           </nav>
 
           <LogoTab compact={scrolled} />
 
-          <div className="col-start-3 flex items-center justify-end gap-8">
+          <div className="col-start-3 flex items-center justify-end gap-8 lg:justify-start lg:pl-10 xl:gap-10 xl:pl-14">
             <nav aria-label="Secondary" className="hidden lg:block">
               <NavList items={right} pathname={pathname} />
             </nav>
@@ -129,8 +130,8 @@ function LogoTab({ compact }: { compact: boolean }) {
         >
           <Logo
             preload
-            sizes="84px"
-            className={clsx("transition-[width] duration-500 ease-out-soft", compact ? "w-12 lg:w-14" : "w-16 lg:w-21")}
+            sizes="(min-width: 64rem) 112px, 80px"
+            className={clsx("transition-[width] duration-500 ease-out-soft", compact ? "w-14 lg:w-18" : "w-20 lg:w-28")}
           />
         </span>
       </Link>

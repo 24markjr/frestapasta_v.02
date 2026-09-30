@@ -7,7 +7,7 @@ const soft = [0.22, 1, 0.36, 1] as const;
 /** The menu card's own lockup: script "Fresta" over a thin, wide "MENU". */
 export function MenuIntro() {
   return (
-    <section className="shell pt-[calc(var(--nav-h)+4rem)] pb-16 text-center lg:pt-[calc(var(--nav-h)+5.5rem)] lg:pb-24">
+    <section className="shell pt-[calc(var(--nav-h)+5rem)] pb-16 text-center lg:pt-[calc(var(--nav-h)+7.5rem)] lg:pb-24">
       <h1 className="relative inline-block">
         <span className="sr-only">Fresta menu</span>
         <span aria-hidden className="block overflow-hidden">

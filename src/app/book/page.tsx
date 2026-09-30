@@ -36,7 +36,7 @@ export default function BookPage() {
         />
       </div>
 
-      <div className="order-1 flex flex-col justify-center px-(--gutter) pt-[calc(var(--nav-h)+4rem)] pb-20 lg:order-2 lg:px-[clamp(2.5rem,5vw,6rem)] lg:pt-[calc(var(--nav-h)+3rem)]">
+      <div className="order-1 flex flex-col justify-center px-(--gutter) pt-[calc(var(--nav-h)+4rem)] pb-20 lg:order-2 lg:px-[clamp(2.5rem,5vw,6rem)] lg:pt-[calc(var(--nav-h)+5.5rem)]">
         <p className="label flex items-center gap-3 text-crema/70">
           <PastaRibbon waves={4} className="h-1.5 w-8 text-arancio" />
           Book a table

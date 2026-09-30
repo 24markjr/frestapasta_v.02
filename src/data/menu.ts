@@ -1,6 +1,6 @@
 // Source of truth: "MENU final print file.pdf" (confirmed accurate by the restaurant).
 // Wording, spelling, order and prices are copied verbatim from the card — do not edit
-// them here without an updated card. Each line on the card is split at its first
+// them here without an updated card. (Owner correction: "Mouse" on the card → "Mousse".) Each line on the card is split at its first
 // comma: `name` is the dish, `description` is the rest, exactly as printed.
 
 import type { PhotoKey } from "./photos";
@@ -57,7 +57,7 @@ export const menu: MenuCategory[] = [
     title: "Desserts",
     cover: "catDesserts",
     dishes: [
-      { name: "Dark Chocolate Mouse", description: "Chantilly Cream, Candied Oranges, Chocolate Soil.", price: 380, markers: ["veg"] },
+      { name: "Dark Chocolate Mousse", description: "Chantilly Cream, Candied Oranges, Chocolate Soil.", price: 380, markers: ["veg"] },
       { name: "Cannoli", description: "Ricotta, Mascarpone, Pistachio and Chocolate.", price: 360, markers: [] },
       { name: "Tiramisu", description: "Marsala, Homemade Mascarpone.", price: 420, markers: [] },
     ],

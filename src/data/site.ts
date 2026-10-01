@@ -26,7 +26,7 @@ export const site = {
 
   contact: {
     address:
-      "Shop No. F-28, First Floor, R-Galleria, Runwal Greens, Mulund - Goregaon Link Road, Mulund West, Mumbai, Maharashtra 400080" as string | null,
+      "Shop No. F-28, First Floor, R-Galleria, Runwal Greens, Mulund - Goregaon Link Road, Nahur West, Mulund West, Mumbai, Maharashtra 400080" as string | null,
     phone: "+91 89767 97655" as string | null,
     email: "frestapasta@gmail.com" as string | null,
   },

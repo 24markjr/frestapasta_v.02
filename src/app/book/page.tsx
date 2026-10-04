@@ -65,15 +65,12 @@ export default function BookPage() {
           {url ? (
             <a
               href={url}
-              target="_blank"
-              rel="noopener noreferrer"
               className="group label inline-flex items-center gap-3 rounded-full bg-arancio-deep px-8 py-5 text-sm text-crema transition-colors hover:bg-[#b52c13]"
             >
               Reserve online
               <span aria-hidden className="nudge">
                 →
               </span>
-              <span className="sr-only">(opens in a new tab)</span>
             </a>
           ) : (
             <p className="label inline-flex items-center gap-3 rounded-full border border-crema/30 px-6 py-4 text-[0.75rem] whitespace-nowrap text-crema/70 sm:px-8 sm:py-5 sm:text-sm">

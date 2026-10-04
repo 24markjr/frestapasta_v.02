@@ -1,0 +1,84 @@
+Phase 1 — Meta setup (your responsibility)
+One-time setup for your SaaS
+1. Create your Meta business portfolio. Use Meta Business Suite and your company's business details.
+2. Create your RestroOS Meta developer app. Use Meta for Developers. Select the Business app configuration and associate your business portfolio.
+3. Add the WhatsApp use case. Configure the app for WhatsApp Business Platform access.
+4. Start Tech Provider onboarding. In your app dashboard, look under the WhatsApp use case customization for the Tech Provider onboarding option. This is the relevant route for independently onboarding other businesses onto your software. 
+   
+   ChatArchitect.com for WhatsApp
+5. Submit for App Review. Request Advanced Access to the permissions your integration needs, including whatsapp_business_messaging and whatsapp_business_management. Prepare a working demonstration of your product and the requested permissions. 
+   
+   ChatArchitect.com for WhatsApp
+   +1
+6. Configure Embedded Signup. Enable the onboarding experience that allows each restaurant to authorize its own WhatsApp business assets inside OwnerOS. 
+   
+   Postman API Network
+You can develop and test the integration before the review is complete, using eligible test accounts and assets. However, don't assume you can onboard unrestricted production customers until the required approvals are granted.
+Phase 2 — Build the integration in RestroOS
+Your development work
+Component	What you need to implement
+OwnerOS	WhatsApp settings page with Connect, Disconnect and connection status
+Frontend	Meta Embedded Signup using the Facebook JavaScript SDK
+FastAPI backend	Secure callback processing, token exchange, number registration and Graph API requests
+PostgreSQL	Store tenant ID, WABA ID, phone number ID, encrypted credentials and connection status
+Webhooks	Receive message statuses, inbound replies and account updates
+Messaging service	Send booking confirmations using approved WhatsApp templates
+SuperAdminOS	Monitor connections, failures, template status and message usage
+Your architecture should follow this pattern:
+#chatgpt-mermaid-_r_13u_{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";font-size:16px;fill:rgb(237, 237, 237);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-_r_13u_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_13u_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_13u_ .error-icon{fill:rgb(27, 27, 27);}#chatgpt-mermaid-_r_13u_ .error-text{fill:rgb(237, 237, 237);stroke:rgb(237, 237, 237);}#chatgpt-mermaid-_r_13u_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-_r_13u_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-_r_13u_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-_r_13u_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-_r_13u_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-_r_13u_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-_r_13u_ .marker{fill:rgb(175, 175, 175);stroke:rgb(175, 175, 175);}#chatgpt-mermaid-_r_13u_ .marker.cross{stroke:rgb(175, 175, 175);}#chatgpt-mermaid-_r_13u_ svg{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";font-size:16px;}#chatgpt-mermaid-_r_13u_ p{margin:0;}#chatgpt-mermaid-_r_13u_ .label{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";color:rgb(237, 237, 237);}#chatgpt-mermaid-_r_13u_ .cluster-label text{fill:rgb(237, 237, 237);}#chatgpt-mermaid-_r_13u_ .cluster-label span{color:rgb(237, 237, 237);}#chatgpt-mermaid-_r_13u_ .cluster-label span p{background-color:transparent;}#chatgpt-mermaid-_r_13u_ .label text,#chatgpt-mermaid-_r_13u_ span{fill:rgb(237, 237, 237);color:rgb(237, 237, 237);}#chatgpt-mermaid-_r_13u_ .node rect,#chatgpt-mermaid-_r_13u_ .node circle,#chatgpt-mermaid-_r_13u_ .node ellipse,#chatgpt-mermaid-_r_13u_ .node polygon,#chatgpt-mermaid-_r_13u_ .node path{fill:rgb(9, 23, 44);stroke:rgb(31, 78, 148);stroke-width:1px;}#chatgpt-mermaid-_r_13u_ .rough-node .label text,#chatgpt-mermaid-_r_13u_ .node .label text,#chatgpt-mermaid-_r_13u_ .image-shape .label,#chatgpt-mermaid-_r_13u_ .icon-shape .label{text-anchor:middle;}#chatgpt-mermaid-_r_13u_ .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#chatgpt-mermaid-_r_13u_ .rough-node .label,#chatgpt-mermaid-_r_13u_ .node .label,#chatgpt-mermaid-_r_13u_ .image-shape .label,#chatgpt-mermaid-_r_13u_ .icon-shape .label{text-align:center;}#chatgpt-mermaid-_r_13u_ .node.clickable{cursor:pointer;}#chatgpt-mermaid-_r_13u_ .root .anchor path{fill:rgb(175, 175, 175)!important;stroke-width:0;stroke:rgb(175, 175, 175);}#chatgpt-mermaid-_r_13u_ .arrowheadPath{fill:rgb(175, 175, 175);}#chatgpt-mermaid-_r_13u_ .edgePath .path{stroke:rgb(175, 175, 175);stroke-width:1px;}#chatgpt-mermaid-_r_13u_ .flowchart-link{stroke:rgb(175, 175, 175);fill:none;}#chatgpt-mermaid-_r_13u_ .edgeLabel{background-color:rgb(0, 0, 0);text-align:center;}#chatgpt-mermaid-_r_13u_ .edgeLabel p{background-color:rgb(0, 0, 0);}#chatgpt-mermaid-_r_13u_ .edgeLabel rect{opacity:0.5;background-color:rgb(0, 0, 0);fill:rgb(0, 0, 0);}#chatgpt-mermaid-_r_13u_ .labelBkg{background-color:rgba(0, 0, 0, 0.5);}#chatgpt-mermaid-_r_13u_ .cluster rect{fill:rgb(27, 27, 27);stroke:rgba(255, 255, 255, 0.15);stroke-width:1px;}#chatgpt-mermaid-_r_13u_ .cluster text{fill:rgb(237, 237, 237);}#chatgpt-mermaid-_r_13u_ .cluster span{color:rgb(237, 237, 237);}#chatgpt-mermaid-_r_13u_ div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";font-size:12px;background:rgb(27, 27, 27);border:1px solid rgba(255, 255, 255, 0.15);border-radius:2px;pointer-events:none;z-index:100;}#chatgpt-mermaid-_r_13u_ .flowchartTitleText{text-anchor:middle;font-size:18px;fill:rgb(237, 237, 237);}#chatgpt-mermaid-_r_13u_ rect.text{fill:none;stroke-width:0;}#chatgpt-mermaid-_r_13u_ .icon-shape,#chatgpt-mermaid-_r_13u_ .image-shape{background-color:rgb(0, 0, 0);text-align:center;}#chatgpt-mermaid-_r_13u_ .icon-shape p,#chatgpt-mermaid-_r_13u_ .image-shape p{background-color:rgb(0, 0, 0);padding:2px;}#chatgpt-mermaid-_r_13u_ .icon-shape .label rect,#chatgpt-mermaid-_r_13u_ .image-shape .label rect{opacity:0.5;background-color:rgb(0, 0, 0);fill:rgb(0, 0, 0);}#chatgpt-mermaid-_r_13u_ .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#chatgpt-mermaid-_r_13u_ .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#chatgpt-mermaid-_r_13u_ .node .neo-node{stroke:rgb(31, 78, 148);}#chatgpt-mermaid-_r_13u_ [data-look="neo"].node rect,#chatgpt-mermaid-_r_13u_ [data-look="neo"].cluster rect,#chatgpt-mermaid-_r_13u_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-_r_13u_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_13u_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-_r_13u_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-_r_13u_-gradient);stroke-width:1px;}#chatgpt-mermaid-_r_13u_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_13u_ [data-look="neo"].node .neo-line path{stroke:rgb(31, 78, 148);filter:none;}#chatgpt-mermaid-_r_13u_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-_r_13u_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_13u_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-_r_13u_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-_r_13u_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_13u_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-_r_13u_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_13u_ .node text{font-size:14px;font-weight:600;letter-spacing:normal;fill:rgb(153, 206, 255);}#chatgpt-mermaid-_r_13u_ .edgeLabels text{font-size:13px;font-weight:600;letter-spacing:-0.08px;fill:rgb(153, 206, 255);}#chatgpt-mermaid-_r_13u_ .node tspan[font-weight="normal"],#chatgpt-mermaid-_r_13u_ .edgeLabels tspan[font-weight="normal"]{font-weight:600;}#chatgpt-mermaid-_r_13u_ .edgeLabel .label rect{opacity:1;rx:13px;ry:13px;fill:rgb(0, 14, 26);stroke:rgb(26, 62, 95);stroke-width:1px;}#chatgpt-mermaid-_r_13u_ .node rect,#chatgpt-mermaid-_r_13u_ .node circle,#chatgpt-mermaid-_r_13u_ .node ellipse,#chatgpt-mermaid-_r_13u_ .node polygon,#chatgpt-mermaid-_r_13u_ .node path{fill:rgb(0, 40, 77);stroke:rgba(255, 255, 255, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_13u_ .node rect{rx:16px;ry:16px;}#chatgpt-mermaid-_r_13u_ .node.mermaid-decision .label-container{fill:rgb(0, 14, 26);stroke:rgb(26, 62, 95);stroke-dasharray:2,2;}#chatgpt-mermaid-_r_13u_ .edgePaths .flowchart-link{stroke:rgb(175, 175, 175);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;}#chatgpt-mermaid-_r_13u_ .marker{fill:rgb(175, 175, 175);stroke:rgb(175, 175, 175);}#chatgpt-mermaid-_r_13u_ :root{--mermaid-font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";}OwnerOS: Connect WhatsAppMeta Embedded SignupFastAPI: Onboarding CallbackSecure Credential StoragePostgreSQL: Tenant WhatsAppMappingBooking ConfirmedRestroOS Messaging ServiceWhatsApp Cloud APIRestaurant CustomerMeta WebhooksFastAPI: Delivery Status
+
+
+
+
+
+The most important backend rule is that every outgoing message must resolve the WhatsApp credentials using the booking's restaurant tenant. Never use a single restaurant's token or phone number for all tenants.
+Phase 3 — Design the customer onboarding flow
+Once your integration is implemented, the restaurant owner should experience the following:
+
+1. Open OwnerOS → Settings → WhatsApp
+The owner clicks Connect WhatsApp.
+
+
+
+
+2. Authorize through Meta
+The owner selects their business assets and authorizes access.
+
+
+
+
+3. RestroOS completes setup
+Your backend stores the tenant's account mapping, completes required registration and enables webhooks.
+
+
+
+
+4. Test and activate
+Verify the number and templates, then enable booking notifications.
+
+
+
+Meta's onboarding process includes additional server-side steps beyond opening the signup popup, so implementing the popup alone is not sufficient. 
+
+Postman API Network
++1
+
+
+
+
+Phase 4 — Decide who pays for WhatsApp messages
+This is a business decision you need to make before launching:
+- Restaurant-paid model: Each restaurant manages its own WhatsApp billing and payment method.
+- RestroOS-managed model: You arrange an eligible partner billing setup and charge restaurants according to your commercial terms. This involves additional partner requirements and billing responsibilities.
+Meta's Tech Provider and Solution Partner arrangements have different requirements. Confirm the applicable billing model before implementing onboarding. 
+
+ChatArchitect.com for WhatsApp
++1
+
+
+
+
+What you should do first, starting now
+Don't begin by entering the restaurant's phone number into the four-field form. Start with the Meta developer setup and Tech Provider onboarding.
+I need one detail to give you the exact next steps for your current setup:
+Do you already have a Meta developer app for RestroOS, or have you only built the WhatsApp integration form in your own application?

@@ -10,13 +10,14 @@ type Props = {
   onClick?: () => void;
 };
 
+/** Goes straight to the reservation page, in the same tab. */
 export function BookButton({ className, variant = "line", onClick }: Props) {
   const external = isExternal(bookingHref);
+  const Anchor = external ? "a" : Link;
   return (
-    <Link
+    <Anchor
       href={bookingHref}
       onClick={onClick}
-      {...(external && { target: "_blank", rel: "noopener noreferrer" })}
       className={clsx(
         "group label relative inline-flex items-center gap-2 whitespace-nowrap",
         variant === "solid" &&
@@ -34,7 +35,6 @@ export function BookButton({ className, variant = "line", onClick }: Props) {
       <span aria-hidden className="nudge">
         →
       </span>
-      {external && <span className="sr-only">(opens in a new tab)</span>}
-    </Link>
+    </Anchor>
   );
 }

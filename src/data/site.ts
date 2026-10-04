@@ -20,8 +20,8 @@ export const site = {
 
   booking: {
     label: "Book a table",
-    /** TODO: the restaurant's booking link — to be supplied. */
-    url: null as string | null,
+    /** Restaurant's reservation page (TableOS). Every "Book a table" button goes here. */
+    url: "https://tableos.restoqr-arcaisys.com/reserve/fresta-pasta?src=website" as string | null,
   },
 
   contact: {

@@ -229,11 +229,6 @@
     animation: steam 2.7s ease-out infinite;
   }
 
-  /* Dish names rolling past */
-  .marquee {
-    animation: marquee 48s linear infinite;
-  }
-
   /* Image hover: 1 → 1.03 */
   .zoom-on-hover {
     transition: transform 900ms var(--ease-out-soft);
@@ -322,11 +317,6 @@
   100% {
     opacity: 0;
     transform: translateY(-22px);
-  }
-}
-@keyframes marquee {
-  to {
-    transform: translate3d(-50%, 0, 0);
   }
 }
 

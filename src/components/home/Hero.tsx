@@ -8,7 +8,6 @@ import { photos } from "@/data/photos";
 import { BookButton } from "@/components/ui/BookButton";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { PastaRibbon } from "@/components/ui/PastaRibbon";
-import { DishMarquee } from "./DishMarquee";
 import { FrestaWordmark } from "@/components/brand/FrestaWordmark";
 import { Basil, Chili, Farfalle, Fusilli, Garlic, Parmesan, Penne, Tomato, Wheat } from "./Doodles";
 
@@ -199,7 +198,6 @@ export function Hero() {
         </div>
       </div>
 
-      <DishMarquee />
     </section>
   );
 }
